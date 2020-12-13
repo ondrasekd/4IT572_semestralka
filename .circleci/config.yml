@@ -16,12 +16,20 @@ jobs:
          paths:
             - .
   deploy:
-     <<: *vse
-     steps:
-        - attach_workspace:
-           at: .
-        - run:
-           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+    <<: *vse
+    docker:
+      - image: ansible:ubuntu1604
+    steps:
+   # Installation
+      - run:
+         name: Install System Packages
+         command: pip install --upgrade pip && pip install ansible
+      - run:
+         name: Install other
+         command: sudo pip install boto boto3
+      - run:
+         name: Run playbook
+         command: ansible-playbook ec2_deploy --user ubuntu --key-file test.pem
 
 workflows:
   version: 2.1
