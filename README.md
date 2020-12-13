@@ -1,2 +1,2 @@
 # 4IT572_semestralka
-TEST
+TEST0
