@@ -16,10 +16,10 @@ jobs:
          paths:
             - .
   deploy:
-     <<: *vse
+    <<: *vse
     docker:
       - image: ansible:ubuntu1604
-     steps:
+    steps:
    # Installation
       - run:
          name: Install System Packages
