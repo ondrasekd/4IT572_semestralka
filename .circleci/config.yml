@@ -20,6 +20,7 @@ jobs:
     docker:
       - image: 'circleci/python:latest'
     steps:
+      - checkout
    # Installation
       - run:
          name: Install System Packages
