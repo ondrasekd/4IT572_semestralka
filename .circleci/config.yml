@@ -18,7 +18,7 @@ jobs:
   deploy:
     <<: *vse
     docker:
-      - image: ansible:ubuntu1604
+      - image: 'circleci/python:latest'
     steps:
    # Installation
       - run:
