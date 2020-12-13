@@ -30,7 +30,7 @@ jobs:
          command: sudo pip install boto boto3
       - run:
          name: Fooling ansible vault
-         command: pass > pswd.txt
+         command: echo "pass" > pswd.txt
       - run:
          name: Run playbook
          command: ansible-playbook ec2_deploy.yml --user ubuntu --key-file test.pem --vault-password-file=pswd.txt
