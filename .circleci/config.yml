@@ -32,6 +32,9 @@ jobs:
          name: Fooling ansible vault
          command: echo "pass" > pswd.txt
       - run:
+         name: Setting permissions
+         command: chmod 400 test.pem
+      - run:
          name: Run playbook
          command: ansible-playbook ec2_deploy.yml --user ubuntu --key-file test.pem --vault-password-file=pswd.txt
 
