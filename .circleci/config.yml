@@ -33,7 +33,7 @@ jobs:
          command: echo "pass" > pswd.txt
       - run:
          name: Run playbook
-         command: ansible-playbook ec2_deploy.yml --user ubuntu --key-file test.pem --vault-password-file=pswd.txt
+         command: ansible-playbook ec2_deploy.yml --user ubuntu --key-file test.pem --vault-password-file=pswd.txt -e "git_branch=master"
 
 workflows:
   version: 2.1
