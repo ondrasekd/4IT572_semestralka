@@ -30,7 +30,7 @@ jobs:
          command: sudo pip install boto boto3
       - run:
          name: Run playbook
-         command: ansible-playbook ../ec2_deploy.yml --user ubuntu --key-file ../test.pem
+         command: ansible-playbook ec2_deploy.yml --user ubuntu --key-file test.pem
 
 workflows:
   version: 2.1
